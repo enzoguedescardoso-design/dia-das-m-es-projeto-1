@@ -180,7 +180,7 @@
       font-size: 12px;
       flex-shrink: 0;
     }
-
+ 
    /* ===== BLOCO CIAFITNESS — tema roxo ===== */
     .ciafitness-bloco {
       background: linear-gradient(160deg, #f5f0ff 0%, #ede4ff 100%);
@@ -239,10 +239,6 @@
       text-align: left;
       animation: aparece 0.4s ease;
     }
-    @keyframes aparece {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0);   }
-    }
     #ciafitness-mensagem p {
       color: #4a006a;
       font-size: 16px;
@@ -264,6 +260,28 @@
       font-size: 12px;
       color: #9b6ec8;
       text-align: right;
+    }
+ 
+    /* ===== DICA DE MÚSICA ===== */
+    #music-hint {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.88);
+      color: #c0006a;
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 20px;
+      border-radius: 30px;
+      box-shadow: 0 2px 16px rgba(233,30,140,0.18);
+      border: 1px solid #ffb6c1;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.6s;
+      pointer-events: none;
+      z-index: 999;
     }
   </style>
 </head>
@@ -316,28 +334,21 @@
     </div>
   </div>
  
-  <!-- ===== BLOCO DFSTAR — substitui CiaFitness ===== -->
+  <!-- ===== BLOCO DFSTAR ===== -->
   <div class="dfstar-bloco">
     <p class="dfstar-titulo">❤️ DF Star</p>
     <p class="dfstar-subtitulo">Sempre presente, sempre salvando vidas ⭐</p>
- 
-    <button id="btn-dfstar" onclick="abrirDFStar()">
-      ❤️ Abrir mensagem
-    </button>
- 
+    <button id="btn-dfstar" onclick="abrirDFStar()">❤️ Abrir mensagem</button>
     <div id="dfstar-mensagem">
       <span class="df-msg-topo">❤️ ⭐ ❤️ ⭐ ❤️</span>
       <p>
         <strong>DF Star,</strong> que legado incrível o seu! ⭐<br><br>
- 
         Desde sempre, salvando vidas — com dedicação, coragem e um coração
         que nunca para. Uma história construída com as próprias mãos, com amor
         e com uma força que só as grandes mulheres têm. 💪<br><br>
- 
         Mas o que faz a <strong>DF Star</strong> tão especial não é só o que
         ela faz — é <em>quem</em> ela é. E por isso, precisamos falar:<br><br>
       </p>
- 
       <div class="elogio-lista">
         <div class="elogio-item">Incrivelmente forte</div>
         <div class="elogio-item">Mãe extraordinária</div>
@@ -352,79 +363,63 @@
         <div class="elogio-item">Inspiração pura</div>
         <div class="elogio-item">...e mais 1001 elogios ❤️</div>
       </div>
- 
       <p>
         Você é daquelas pessoas que faz o mundo ser melhor só por existir —
         que carrega responsabilidade com leveza, que cuida de todos sem esquecer
         de ser quem é. Isso não é pouco. Isso é <strong>muito</strong>. 🌟<br><br>
- 
         Que o Dia das Mães seja tão especial quanto cada vida que você
         já tocou, cada momento que você esteve presente e cada sorriso
         que você gerou — porque você merece tudo isso e muito mais. ❤️✨<br><br>
- 
         Parabéns por tudo. <strong>Feliz Dia das Mães!</strong> 🎉
       </p>
- 
-      <div class="df-msg-rodape">
-        ❤️ com admiração e muito carinho — Feliz Dia das Mães!
-      </div>
+      <div class="df-msg-rodape">❤️ com admiração e muito carinho — Feliz Dia das Mães!</div>
     </div>
   </div>
-
+ 
   <!-- ===== BLOCO CIAFITNESS ===== -->
   <div class="ciafitness-bloco">
     <p class="ciafitness-titulo">💜 CiaFitness</p>
     <p class="ciafitness-subtitulo">Uma história incrível que merece ser celebrada ✨</p>
- 
-    <button id="btn-ciafitness" onclick="abrirCiaFitness()">
-      💜 Abrir mensagem
-    </button>
- 
+    <button id="btn-ciafitness" onclick="abrirCiaFitness()">💜 Abrir mensagem</button>
     <div id="ciafitness-mensagem">
       <span class="cia-msg-topo">💜 ✨ 💜 ✨ 💜</span>
       <p>
         <strong>CiaFitness,</strong> que história linda a sua! 🌟<br><br>
- 
         O que começou como um sonho — com a ajuda carinhosa de uma tia incrível —
         hoje é uma realidade que inspira e emociona. Uma loja de roupas fitness
         que nasceu do amor, da garra e da dedicação, e que cresceu de um jeito
         que enche o coração de orgulho. 💪<br><br>
- 
         Loja física? ✅<br>
         Loja virtual? ✅<br>
         Site lindo? ✅<br>
         Clientes fiéis e apaixonadas? ✅<br><br>
- 
         Isso é o que chamamos de <strong>evolução de verdade</strong> —, 
         peça por peça, cliente por cliente. 👟<br><br>
- 
         Mas além de tudo isso, o que mais impressiona é a mulher por trás dessa
         trajetória: mãe, esposa e empresária. Que exemplo de força, equilíbrio
         e amor em tudo que faz! 🌸<br><br>
-
         Uma grande mãe exemplar, uma mãe incrível, uma mãe extraodinária,
         uma mãe bonita, inteligente, forte e mais outros 1001 elogios.
         A senhora merece um dia e presente tão perfeito quanto este.<br><br>
- 
         Que o Dia das Mães seja tão incrível quanto cada conquista da
         <strong>CiaFitness</strong> — tão especial quanto você,
         que transforma suor em sucesso e amor em legado. 💜✨<br><br>
- 
         Parabéns por tudo. Feliz Dia das Mães! 🎉
       </p>
-      <div class="cia-msg-rodape">
-        💜 com admiração e carinho — Feliz Dia das Mães!
-      </div>
+      <div class="cia-msg-rodape">💜 com admiração e carinho — Feliz Dia das Mães!</div>
     </div>
   </div>
  
   <div class="enfeites">💐🌷🌸💐🌷🌸💐</div>
- 
   <div class="rodape">
     <p>feito com muito amor por nós 💖 | Feliz Dia das Mães!</p>
   </div>
  
+  <!-- Dica de música (some sozinha) -->
+  <div id="music-hint">🎵 Música tocando para você, mãe 💖</div>
+ 
   <script>
+    // ===== Mensagens =====
     function abrirMensagem() {
       var mensagem = document.getElementById("mensagem-secreta");
       var botao = document.getElementById("btn-mensagem");
@@ -449,20 +444,208 @@
         botao.textContent = "❤️ Abrir mensagem";
       }
     }
-
+ 
     function abrirCiaFitness() {
-      var mensagem = document.getElementById("ciafitness-mensagem")
-      var botao = document.getElementById("btn-ciafitness")
+      var mensagem = document.getElementById("ciafitness-mensagem");
+      var botao = document.getElementById("btn-ciafitness");
       if (mensagem.style.display == "none" || mensagem.style.display == "") {
-        mensagem.style.display = "block"
-        botao.textContent = "💜 Fechar mensagem"
-        mensagem.scrollIntoView({ behavior: "smooth", block: "nearest" })
+        mensagem.style.display = "block";
+        botao.textContent = "💜 Fechar mensagem";
+        mensagem.scrollIntoView({ behavior: "smooth", block: "nearest" });
       } else {
-        mensagem.style.display = "none"
-        botao.textContent = "💜 Abrir mensagem"
+        mensagem.style.display = "none";
+        botao.textContent = "💜 Abrir mensagem";
       }
     }
+ 
+    // ===== Música de fundo — Piano + Harpa orgânicos, Web Audio API =====
+    // Tom: Fá maior — quente, amoroso, tipo valsa lenta de caixinha de música
+    // Técnica: síntese aditiva com múltiplos harmônicos + decay longo (piano acústico)
+    // Autoplay na primeira interação do usuário (requisito do navegador)
+ 
+    var audioCtx = null;
+    var masterGain = null;
+    var reverb = null;
+    var iniciado = false;
+    var loopTimeout = null;
+ 
+    // Frequências — Fá maior (F G A Bb C D E F)
+    var N = {
+      F3:174.61, G3:196.00, A3:220.00, Bb3:233.08, C4:261.63,
+      D4:293.66, E4:329.63, F4:349.23, G4:392.00, A4:440.00,
+      Bb4:466.16, C5:523.25, D5:587.33, E5:659.25, F5:698.46,
+      C3:130.81, F2:87.31,  C2:65.41,  Bb2:116.54, A2:110.00
+    };
+ 
+    // Melodia principal — tipo caixinha de música / piano suave
+    // [frequência, duração_seg, volume_relativo]
+    var MELODIA = [
+      // Frase A — gentil e ascendente
+      [N.C4, 0.55, 1.0], [N.E4, 0.45, 0.85], [N.F4, 0.55, 1.0], [N.G4, 0.45, 0.85],
+      [N.A4, 0.75, 1.0], [N.G4, 0.45, 0.7],  [N.F4, 0.55, 0.9], [N.E4, 1.1,  0.8],
+      // Frase B
+      [N.D4, 0.55, 0.9], [N.F4, 0.45, 0.8],  [N.A4, 0.55, 1.0], [N.Bb4,0.45, 0.9],
+      [N.C5, 0.75, 1.0], [N.Bb4,0.45, 0.75], [N.A4, 0.55, 0.85],[N.G4, 1.1,  0.8],
+      // Frase C — emotiva, pico da melodia
+      [N.A4, 0.45, 1.0], [N.C5, 0.45, 1.0],  [N.D5, 0.55, 1.0], [N.E5, 0.75, 1.0],
+      [N.D5, 0.45, 0.9], [N.C5, 0.45, 0.85], [N.Bb4,0.55, 0.9], [N.A4, 1.1,  0.85],
+      // Frase D — descida serena
+      [N.G4, 0.55, 0.85],[N.F4, 0.45, 0.8],  [N.E4, 0.55, 0.85],[N.D4, 0.45, 0.75],
+      [N.C4, 0.75, 0.9], [N.E4, 0.45, 0.75], [N.G4, 0.55, 0.8], [N.F4, 1.6,  0.9],
+    ];
+ 
+    // Baixo / harpa — arpejo suave de acordes
+    // [notas[], duração_total_seg]
+    var BAIX = [
+      [[N.F2,  N.C3,  N.F3,  N.A3],  5.2],
+      [[N.Bb2, N.F3,  N.Bb3, N.D4],  5.2],
+      [[N.C3,  N.G3,  N.C4,  N.E4],  5.2],
+      [[N.F2,  N.C3,  N.F3,  N.A3],  5.2],
+      [[N.A2,  N.E4/2,N.A3,  N.C4],  5.2],
+      [[N.Bb2, N.F3,  N.Bb3, N.D4],  5.2],
+      [[N.C3,  N.G3,  N.C4,  N.E4],  5.2],
+      [[N.F2,  N.C3,  N.F3,  N.A3],  5.2],
+    ];
+ 
+    // Cria "impulso" para reverb suave de sala
+    function criarReverb(ctx) {
+      var conv = ctx.createConvolver();
+      var sr = ctx.sampleRate;
+      var dur = 2.2; // segundos de cauda
+      var len = sr * dur;
+      var buf = ctx.createBuffer(2, len, sr);
+      for (var c = 0; c < 2; c++) {
+        var d = buf.getChannelData(c);
+        for (var i = 0; i < len; i++) {
+          d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.5);
+        }
+      }
+      conv.buffer = buf;
+      return conv;
+    }
+ 
+    // Toca uma nota com timbre de piano acústico (síntese aditiva + decay)
+    function notaPiano(freq, vol, inicio, dur) {
+      var ctx = audioCtx;
+      var wet  = ctx.createGain(); // para o reverb
+      var dry  = ctx.createGain(); // direto
+      wet.gain.value = 0.38;
+      dry.gain.value = 0.62;
+      wet.connect(reverb);
+      dry.connect(masterGain);
+      reverb.connect(masterGain);
+ 
+      // Piano = fundamental + harmônicos com decaimentos diferentes
+      var harmonicos = [
+        { mult: 1,    amp: vol * 0.55, decay: dur * 2.2 },
+        { mult: 2,    amp: vol * 0.22, decay: dur * 1.4 },
+        { mult: 3,    amp: vol * 0.10, decay: dur * 0.9 },
+        { mult: 4,    amp: vol * 0.06, decay: dur * 0.6 },
+        { mult: 6,    amp: vol * 0.02, decay: dur * 0.3 },
+      ];
+ 
+      harmonicos.forEach(function(h) {
+        var osc = ctx.createOscillator();
+        var env = ctx.createGain();
+ 
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq * h.mult, inicio);
+ 
+        // Ataque rápido, decay longo tipo piano
+        var atk = 0.008;
+        env.gain.setValueAtTime(0, inicio);
+        env.gain.linearRampToValueAtTime(h.amp, inicio + atk);
+        env.gain.exponentialRampToValueAtTime(0.0001, inicio + Math.max(h.decay, 0.05));
+ 
+        osc.connect(env);
+        env.connect(dry);
+        env.connect(wet);
+ 
+        osc.start(inicio);
+        osc.stop(inicio + Math.max(h.decay, dur) + 0.1);
+      });
+    }
+ 
+    // Toca arpejo de harpa — notas espalhadas no tempo
+    function arpejoHarpa(notas, inicio, durTotal) {
+      var intervalo = durTotal / (notas.length * 2 + 1);
+      notas.forEach(function(freq, i) {
+        var t = inicio + i * intervalo;
+        notaPiano(freq * 0.5, 0.055, t, durTotal - i * intervalo);
+      });
+    }
+ 
+    function tocarLoop() {
+      if (!iniciado || !audioCtx) return;
+ 
+      var agora  = audioCtx.currentTime;
+      var cursor = agora + 0.08;
+ 
+      // Melodia
+      MELODIA.forEach(function(nota) {
+        notaPiano(nota[0], nota[2] * 0.20, cursor, nota[1] * 2.0);
+        cursor += nota[1];
+      });
+ 
+      // Harpa / baixo
+      var cBaix = agora + 0.08;
+      BAIX.forEach(function(acorde) {
+        arpejoHarpa(acorde[0], cBaix, acorde[1]);
+        cBaix += acorde[1];
+      });
+ 
+      var duracaoTotal = MELODIA.reduce(function(s, n) { return s + n[1]; }, 0);
+ 
+      loopTimeout = setTimeout(function() {
+        tocarLoop();
+      }, (duracaoTotal + 0.8) * 1000);
+    }
+ 
+    function iniciarMusica() {
+      if (iniciado) return;
+      iniciado = true;
+ 
+      audioCtx  = new (window.AudioContext || window.webkitAudioContext)();
+      masterGain = audioCtx.createGain();
+      masterGain.gain.setValueAtTime(0, audioCtx.currentTime);
+      // Fade in suave ao iniciar
+      masterGain.gain.linearRampToValueAtTime(0.82, audioCtx.currentTime + 3.0);
+      masterGain.connect(audioCtx.destination);
+ 
+      reverb = criarReverb(audioCtx);
+ 
+      tocarLoop();
+ 
+      // Mostrar dica breve
+      var hint = document.getElementById('music-hint');
+      hint.style.opacity = '1';
+      setTimeout(function() { hint.style.opacity = '0'; }, 3800);
+ 
+      // Remover listeners após início
+      document.removeEventListener('click',      iniciarMusica);
+      document.removeEventListener('touchstart', iniciarMusica);
+      document.removeEventListener('keydown',    iniciarMusica);
+    }
+ 
+    // Iniciar na primeira interação (requisito dos navegadores modernos)
+    document.addEventListener('click',      iniciarMusica);
+    document.addEventListener('touchstart', iniciarMusica);
+    document.addEventListener('keydown',    iniciarMusica);
+ 
+    // Tentar autoplay direto (funciona em alguns navegadores/situações)
+    window.addEventListener('load', function() {
+      try {
+        var ctx = new (window.AudioContext || window.webkitAudioContext)();
+        if (ctx.state === 'running') {
+          ctx.close();
+          iniciarMusica();
+        } else {
+          ctx.close();
+        }
+      } catch(e) {}
+    });
   </script>
  
 </body>
 </html>
+ 
